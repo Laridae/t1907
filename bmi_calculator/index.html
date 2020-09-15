@@ -6,16 +6,27 @@
     <title>BMI Calculator</title>
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
-<body>
+<body onkeydown="handlePress()">
     <h2>The new improved webpage - now with a BMI calculator!</h2>
     <h3>Wieeeeeeeeeeeeeeeeeeeee ~</h3>
+    <select id="method">
+        <option value="metric">Metric</option>
+        <option value="imperial">Imperial</option>
+    </select>
     <input type="text" id="weight" placeholder="Your weight in kilograms..">
     <input type="text" id="height" placeholder="Your height in centimeters..">
     <button id="calculate">Calculate</button>
     <div id="results">
-        
+
     </div>
     <script src="./assets/js/bmi_ui.js"></script>
     <script src="./assets/js/bmi.js"></script>
+    <script>
+        const handlePress = () => {
+            if (event.keyCode === 13) {
+                calculateBMI()
+            }
+        }
+    </script>
 </body>
 </html>
